@@ -1,58 +1,65 @@
 """
-Constantes visuelles : couleurs, polices, dimensions pour pygame.
+Constantes visuelles : palette claire, polices, dimensions pour pygame.
 """
 
-# ── Palette ───────────────────────────────────────────────────────────────────
+# ── Palette principale (thème clair) ─────────────────────────────────────────
 
-FOND_FENETRE        = (15,  20,  40)
-FOND_ENTETE         = (20,  28,  58)
-FOND_GRILLE         = (12,  48,  90)
-FOND_CASE_CACHEE    = (35,  68, 120)
-FOND_CASE_REVELEE   = (220, 220, 215)
-FOND_CASE_MINE      = (200,  50,  50)
-FOND_CASE_MINE_HIT  = (255,  30,  30)   # mine cliquée
-FOND_CASE_SURVOL    = (55,  95, 155)
-FOND_CASE_DRAPEAU   = (35,  68, 120)
+FOND_FENETRE        = (236, 240, 245)
+FOND_ENTETE         = (255, 255, 255)
+FOND_GRILLE         = (200, 210, 225)
 
-BORD_CASE_CLAIR     = (70, 110, 180)
-BORD_CASE_SOMBRE    = (18,  38,  75)
-BORD_REVELEE        = (180, 180, 175)
+FOND_CASE_CACHEE    = (150, 175, 210)
+FOND_CASE_REVELEE   = (235, 238, 242)
+FOND_CASE_MINE      = (220,  70,  70)
+FOND_CASE_MINE_HIT  = (255,  30,  30)
+FOND_CASE_SURVOL    = (180, 205, 235)
+FOND_CASE_DRAPEAU   = (150, 175, 210)
 
-COULEUR_TEXTE       = (224, 224, 224)
-COULEUR_ACCENT      = (233,  69,  96)
-COULEUR_SUCCES      = (39,  174,  96)
-COULEUR_TIMER       = (233,  69,  96)
-COULEUR_SEPARATEUR  = (12,  48,  90)
+BORD_CASE_CLAIR     = (210, 225, 245)
+BORD_CASE_SOMBRE    = (100, 130, 170)
+BORD_REVELEE        = (190, 195, 205)
 
-COULEUR_MENU_ACTIF  = (233,  69,  96)
-COULEUR_MENU_INACTIF= (45,  74, 122)
-COULEUR_MENU_TEXTE  = (224, 224, 224)
+COULEUR_TEXTE       = ( 30,  40,  60)
+COULEUR_TEXTE_INV   = (255, 255, 255)
+COULEUR_ACCENT      = (210,  50,  70)
+COULEUR_ACCENT2     = ( 40, 110, 210)
+COULEUR_SUCCES      = ( 34, 155,  75)
+COULEUR_SEPARATEUR  = (190, 200, 215)
 
-# Couleurs des chiffres (1–8)
+COULEUR_MENU_ACTIF          = ( 40, 110, 210)
+COULEUR_MENU_INACTIF        = (200, 210, 225)
+COULEUR_MENU_TEXTE_ACTIF    = (255, 255, 255)
+COULEUR_MENU_TEXTE_INACTIF  = ( 60,  80, 110)
+
+COULEUR_BONUS_FOND    = (255, 252, 235)
+COULEUR_BONUS_BORD    = (200, 170,  50)
+COULEUR_BONUS_ACTIF   = ( 45, 170,  90)
+COULEUR_BONUS_INACTIF = (165, 170, 178)
+COULEUR_BONUS_UTILISE = (210, 213, 218)
+COULEUR_BONUS_TEXTE   = ( 45,  55,  75)
+COULEUR_HINT_FLASH    = (255, 215,  40)
+
 COULEURS_CHIFFRES = {
-    1: ( 21, 101, 192),
-    2: ( 46, 125,  50),
-    3: (198,  40,  40),
-    4: ( 74,  20, 140),
-    5: (191,  54,  12),
-    6: (  0, 131, 143),
-    7: ( 33,  33,  33),
-    8: (117, 117, 117),
+    1: ( 20,  90, 200),
+    2: ( 30, 140,  60),
+    3: (200,  40,  40),
+    4: ( 90,  30, 160),
+    5: (190,  80,  15),
+    6: (  0, 140, 150),
+    7: ( 30,  30,  30),
+    8: (110, 110, 110),
 }
 
-# ── Dimensions ────────────────────────────────────────────────────────────────
+TAILLE_CASE     = 36
+MARGE_GRILLE    = 10
+HAUTEUR_ENTETE  = 72
+HAUTEUR_MENU    = 44
+HAUTEUR_BONUS   = 54
+RAYON           = 5
+GAP             = 2
 
-TAILLE_CASE     = 36        # pixels par case
-MARGE_GRILLE    = 10        # padding autour de la grille
-HAUTEUR_ENTETE  = 72        # px
-HAUTEUR_MENU    = 44        # px barre de niveaux
-RAYON           = 4         # arrondi des cases
-GAP             = 2         # espace entre cases
-
-# ── Polices ───────────────────────────────────────────────────────────────────
-# Chargées dynamiquement dans Fenetre via pygame.font
-
-TAILLE_POLICE_CHIFFRE  = 18
-TAILLE_POLICE_ENTETE   = 22
-TAILLE_POLICE_LABEL    = 14
-TAILLE_POLICE_BTN      = 13
+TAILLE_POLICE_CHIFFRE = 18
+TAILLE_POLICE_ENTETE  = 22
+TAILLE_POLICE_LABEL   = 14
+TAILLE_POLICE_BTN     = 13
+TAILLE_POLICE_BONUS   = 13
