@@ -128,6 +128,10 @@ class Grille:
     def clique_gauche(self, ligne, colonne):
         case_cliquee = self.cases[ligne][colonne]   # case sur laquelle le joueur a cliqué
 
+        #Verification de la case si elle a un drapeau (éviter bug drapeau 1er tour)
+        if case_cliquee.etat =="drapeau":
+            return
+
         if case_cliquee.est_une_bombe:
             case_cliquee.reveler_case()                  # on révèle la bombe cliquée
             self.reveler_toutes_les_bombes()        # on révèle toutes les bombes (game over)
