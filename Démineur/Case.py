@@ -35,7 +35,8 @@ class Cases:
             self.etat = "cachee"
             return
 
-    def clique_gauche_revele_case(self):
+    #Clique gauche
+    def reveler_case(self):
         # Si la case a un drapeau, on ne révèle pas
         if self.etat == "drapeau":
             return

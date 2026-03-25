@@ -40,7 +40,15 @@ class Grille:
             if pos in positions_possibles:
                 positions_possibles.remove(pos)
 
+        # Tirage aléatoire des bombes
         self.positions_des_bombes = random.sample(positions_possibles, self.nombre_de_bombes)
+
+        # --------------------------------------------------------------------
+        # AJOUT : on marque les cases tirées comme étant des bombes
+        # (sinon est_une_bombe reste toujours False → aucune bombe dans la grille)
+        # --------------------------------------------------------------------
+        for (l, c) in self.positions_des_bombes:
+            self.cases[l][c].est_une_bombe = True  # AJOUT : activation de la bombe dans l'objet Case
 
     def calcule_nombre_de_bombe_autour_de_chaque_cases(self):
 
@@ -90,7 +98,7 @@ class Grille:
             case = self.cases[l][c]
 
             # révéler la case
-            case.etat = "revelee"
+            case.reveler_case()
 
             # Si la case vaut 0, on ajoute ses voisins
             if case.nombre_de_bombes_autour == 0:
@@ -115,17 +123,17 @@ class Grille:
         # on révèle toutes les bombes quand le joueur clique sur une bombe
         for (l, c) in self.positions_des_bombes:
             case = self.cases[l][c]      # on récupère la case qui contient une bombe
-            case.reveler()               # on révèle la bombe
+            case.reveler_case()               # on révèle la bombe
 
     def clique_gauche(self, ligne, colonne):
         case_cliquee = self.cases[ligne][colonne]   # case sur laquelle le joueur a cliqué
 
         if case_cliquee.est_une_bombe:
-            case_cliquee.reveler()                  # on révèle la bombe cliquée
+            case_cliquee.reveler_case()                  # on révèle la bombe cliquée
             self.reveler_toutes_les_bombes()        # on révèle toutes les bombes (game over)
 
         else:
-            case_cliquee.reveler()                  # on révèle la case car ce n'est pas une bombe
+            case_cliquee.reveler_case()                  # on révèle la case car ce n'est pas une bombe
 
             if case_cliquee.nombre_de_bombes_autour == 0:
                 # si la case vaut 0, on révèle automatiquement toute la zone vide
