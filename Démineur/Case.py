@@ -11,6 +11,9 @@ class Cases:
         # Nombre de mines autour de cette case (calculé plus tard par la grille)
         self.nombre_de_bombes_autour = 0
 
+        #Gère l'activation du bonus
+        self.est_un_bonus = False
+
         # État initial de la case : toujours "cachee" au début de la partie
         self.etat = "cachee"
     

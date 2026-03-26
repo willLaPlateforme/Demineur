@@ -1,4 +1,5 @@
 from Case import Cases
+from Bonus import Bonus
 import random 
 
 class Grille:
@@ -10,6 +11,8 @@ class Grille:
         self.positions_des_bombes = []  # liste des positions des bombes (tuples)
 
         self.cases = []  # liste qui contiendra chaque ligne de cases
+        
+        self.bonus = Bonus()
 
         for l in range(self.nombre_de_lignes):
             ligne = []
@@ -136,6 +139,12 @@ class Grille:
             case_cliquee.reveler_case()                  # on révèle la bombe cliquée
             self.reveler_toutes_les_bombes()        # on révèle toutes les bombes (game over)
 
+        elif case_cliquee.est_un_bonus:
+            case_cliquee.est_un_bonus = False
+            case_cliquee.etat = "revelee"
+            self.bonus.activer_les_bonus(self)
+            return
+        
         else:
             case_cliquee.reveler_case()                  # on révèle la case car ce n'est pas une bombe
 
