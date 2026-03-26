@@ -1,2 +1,2 @@
-# D-mineur
+# Démineur
 Démineur (Démineur sur pygame)
