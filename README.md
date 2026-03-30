@@ -47,7 +47,7 @@ Interface graphique avec Pygame
 ⚙️ Installation
 1. Cloner le projet
 git clone https://github.com/WillLaPlateforme/Demineur.git
-cd minesweeper-pygame
+cd Demineur-pygame
 2. Installer les dépendances
 pip install pygame
 ▶️ Lancer le jeu
